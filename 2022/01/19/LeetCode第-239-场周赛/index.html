@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LeetCode第 239 场周赛 | dreaming since long time ago</title><meta name="keywords" content="lc"><meta name="author" content="Fyseus"><meta name="copyright" content="Fyseus"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="革命尚未成功，同志仍需努力   前言 第三题有点烦人，没搞出来  放个结果：   题目到目标元素的最小距离（easy） 给你一个整数数组 nums （下标 从 0 开始 计数）以及两个整数 target 和 start ，请你找出一个下标 i ，满足 nums[i] &#x3D;&#x3D; target 且 abs(i - start) 最小化 。注意：abs(x) 表示 x 的绝对值。 返回 abs(i - s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode第 239 场周赛">
+<meta property="og:url" content="https://fyseus.github.io/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/index.html">
+<meta property="og:site_name" content="dreaming since long time ago">
+<meta property="og:description" content="革命尚未成功，同志仍需努力   前言 第三题有点烦人，没搞出来  放个结果：   题目到目标元素的最小距离（easy） 给你一个整数数组 nums （下标 从 0 开始 计数）以及两个整数 target 和 start ，请你找出一个下标 i ，满足 nums[i] &#x3D;&#x3D; target 且 abs(i - start) 最小化 。注意：abs(x) 表示 x 的绝对值。 返回 abs(i - s">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fyseus.github.io/img/top_image.jpg">
+<meta property="article:published_time" content="2022-01-18T16:48:54.000Z">
+<meta property="article:modified_time" content="2022-01-18T17:13:34.256Z">
+<meta property="article:author" content="Fyseus">
+<meta property="article:tag" content="lc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fyseus.github.io/img/top_image.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fyseus.github.io/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LeetCode第 239 场周赛',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-19 01:13:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/01/15/4LU9qegZIn3lutp.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top_image.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dreaming since long time ago</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LeetCode第 239 场周赛</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-18T16:48:54.000Z" title="Created 2022-01-19 00:48:54">2022-01-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-18T17:13:34.256Z" title="Updated 2022-01-19 01:13:34">2022-01-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LeetCode第 239 场周赛"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>革命尚未成功，同志仍需努力</p>
+</blockquote>
+<hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>第三题有点烦人，没搞出来</p>
+</blockquote>
+<p>放个结果：</p>
+<p><img src="https://s2.loli.net/2022/01/19/1EuHdtINemCf3xh.jpg" alt="239_weekly.jpg"></p>
+<hr>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h5 id="到目标元素的最小距离（easy）"><a href="#到目标元素的最小距离（easy）" class="headerlink" title="到目标元素的最小距离（easy）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-239/problems/minimum-distance-to-the-target-element/">到目标元素的最小距离（easy）</a></strong></h5><blockquote>
+<p>给你一个整数数组 <code>nums</code> （下标 <strong>从 0 开始</strong> 计数）以及两个整数 <code>target</code> 和 <code>start</code> ，请你找出一个下标 <code>i</code> ，满足 <code>nums[i] == target</code> 且 <code>abs(i - start)</code> <strong>最小化</strong> 。注意：<code>abs(x)</code> 表示 <code>x</code> 的绝对值。</p>
+<p>返回 <code>abs(i - start)</code> 。</p>
+<p>题目数据保证 <code>target</code> 存在于 <code>nums</code> 中。</p>
+</blockquote>
+<p>暴力，没啥可说的。。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMinDistance</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == target) &#123;</span><br><span class="line">                ans = Math.min(ans, Math.abs(start - i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="将字符串拆分为递减的连续值（medium）"><a href="#将字符串拆分为递减的连续值（medium）" class="headerlink" title="将字符串拆分为递减的连续值（medium）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-239/problems/splitting-a-string-into-descending-consecutive-values/">将字符串拆分为递减的连续值（medium）</a></strong></h5><blockquote>
+<p>给你一个仅由数字组成的字符串 <code>s</code> 。</p>
+<p>请你判断能否将 <code>s</code> 拆分成两个或者多个 <strong>非空子字符串</strong> ，使子字符串的 <strong>数值</strong> 按 <strong>降序</strong> 排列，且每两个 <strong>相邻子字符串</strong> 的数值之 <strong>差</strong> 等于 <code>1</code> 。</p>
+<ul>
+<li>例如，字符串 <code>s = &quot;0090089&quot;</code> 可以拆分成 <code>[&quot;0090&quot;, &quot;089&quot;]</code> ，数值为 <code>[90,89]</code> 。这些数值满足按降序排列，且相邻值相差 <code>1</code> ，这种拆分方法可行。</li>
+<li>另一个例子中，字符串 <code>s = &quot;001&quot;</code> 可以拆分成 <code>[&quot;0&quot;, &quot;01&quot;]</code>、<code>[&quot;00&quot;, &quot;1&quot;]</code> 或 <code>[&quot;0&quot;, &quot;0&quot;, &quot;1&quot;]</code> 。然而，所有这些拆分方法都不可行，因为对应数值分别是 <code>[0,1]</code>、<code>[0,1]</code> 和 <code>[0,0,1]</code> ，都不满足按降序排列的要求。</li>
+</ul>
+<p>如果可以按要求拆分 <code>s</code> ，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p><strong>子字符串</strong> 是字符串中的一个连续字符序列。</p>
+</blockquote>
+<p>这题因为转化为Long的时候用valueOf，而String的长度最长能到20，所以WA（NumberFormatException）了3次，得先判断好范围，剪去不必要的情况</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">splitString</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        String temp = <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) != <span class="number">0</span>) &#123;</span><br><span class="line">                temp = s.substring(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        s = temp;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> &lt;&lt; (n - <span class="number">1</span>); i &lt; <span class="number">1</span> &lt;&lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Integer.bitCount(i) &lt; <span class="number">2</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> lstPtr = -<span class="number">1</span>, curPtr = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">long</span> lst = -<span class="number">1</span>, cur = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">boolean</span> can = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((i &amp; (<span class="number">1</span> &lt;&lt; j)) != <span class="number">0</span>) &#123;</span><br><span class="line">                    lstPtr = curPtr;</span><br><span class="line">                    curPtr = j;</span><br><span class="line">                    lst = cur;</span><br><span class="line">                    <span class="keyword">int</span> begin = curPtr;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = lstPtr + <span class="number">1</span>; k &lt; curPtr + <span class="number">1</span> &amp;&amp; k &lt; n; k++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (s.charAt(k) != <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">                            begin = k;</span><br><span class="line">                            <span class="comment">// if (i == (1 &lt;&lt; (n - 1)) + 1) System.out.println(k);</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (curPtr + <span class="number">1</span> - begin &gt; <span class="number">15</span>) &#123;</span><br><span class="line">                        can = <span class="keyword">false</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    cur = Long.valueOf(s.substring(lstPtr + <span class="number">1</span>, curPtr + <span class="number">1</span>));</span><br><span class="line">                    <span class="keyword">if</span> (lst != -<span class="number">1</span> &amp;&amp; cur != lst - <span class="number">1</span>) &#123;</span><br><span class="line">                        can = <span class="keyword">false</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (can) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="邻位交换的最小次数（medium）"><a href="#邻位交换的最小次数（medium）" class="headerlink" title="邻位交换的最小次数（medium）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-239/problems/minimum-adjacent-swaps-to-reach-the-kth-smallest-number/">邻位交换的最小次数（medium）</a></strong></h5><blockquote>
+<p>给你一个表示大整数的字符串 <code>num</code> ，和一个整数 <code>k</code> 。</p>
+<p>如果某个整数是 <code>num</code> 中各位数字的一个 <strong>排列</strong> 且它的 <strong>值大于</strong> <code>num</code> ，则称这个整数为 <strong>妙数</strong> 。可能存在很多妙数，但是只需要关注 <strong>值最小</strong> 的那些。</p>
+<ul>
+<li><p>例如，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num = &quot;5489355142&quot;：</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第 1 个最小妙数是 <code>&quot;5489355214&quot;</code></li>
+<li>第 2 个最小妙数是 <code>&quot;5489355241&quot;</code></li>
+<li>第 3 个最小妙数是 <code>&quot;5489355412&quot;</code></li>
+<li>第 4 个最小妙数是 <code>&quot;5489355421&quot;</code></li>
+</ul>
+</li>
+</ul>
+<p>返回要得到第 <code>k</code> 个 <strong>最小妙数</strong> 需要对 <code>num</code> 执行的 <strong>相邻位数字交换的最小次数</strong> 。</p>
+<p>测试用例是按存在第 <code>k</code> 个最小妙数而生成的。</p>
+</blockquote>
+<p>想想就挺麻烦的，要手动生成下一个序列。。先睡了，明天再想想。。（C++可以直接用next_permutation(v.begin(), v.end())，而JAVA可能必须手写模拟过程。。）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="包含每个查询的最小区间（hard）"><a href="#包含每个查询的最小区间（hard）" class="headerlink" title="包含每个查询的最小区间（hard）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-239/problems/minimum-interval-to-include-each-query/">包含每个查询的最小区间（hard）</a></strong></h5><blockquote>
+<p>给你一个二维整数数组 <code>intervals</code> ，其中 <code>intervals[i] = [lefti, righti]</code> 表示第 <code>i</code> 个区间开始于 <code>lefti</code> 、结束于 <code>righti</code>（包含两侧取值，<strong>闭区间</strong>）。区间的 <strong>长度</strong> 定义为区间中包含的整数数目，更正式地表达是 <code>righti - lefti + 1</code> 。</p>
+<p>再给你一个整数数组 <code>queries</code> 。第 <code>j</code> 个查询的答案是满足 <code>lefti &lt;= queries[j] &lt;= righti</code> 的 <strong>长度最小区间 <code>i</code> 的长度</strong> 。如果不存在这样的区间，那么答案是 <code>-1</code> 。</p>
+<p>以数组形式返回对应查询的所有答案。</p>
+</blockquote>
+<p>离线查找+二分，需要注意的是，这里为了避免重复地判断已赋值的结果，用nxt数组对已赋值的结果进行跳过（否则最坏情况下能到O(NQ)，会TLE）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] minInterval(<span class="keyword">int</span>[][] intervals, <span class="keyword">int</span>[] queries) &#123;</span><br><span class="line">        Arrays.sort(intervals, (t0, t1) -&gt; t0[<span class="number">1</span>] - t0[<span class="number">0</span>] - (t1[<span class="number">1</span>] - t1[<span class="number">0</span>]));</span><br><span class="line">        <span class="keyword">int</span> n = queries.length;</span><br><span class="line">        <span class="keyword">int</span>[][] newQ = <span class="keyword">new</span> <span class="keyword">int</span>[n][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            newQ[i][<span class="number">0</span>] = queries[i];</span><br><span class="line">            newQ[i][<span class="number">1</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(newQ, (t0, t1) -&gt; t0[<span class="number">0</span>] - t1[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span>[] nxt = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        Arrays.fill(ans, -<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] in : intervals) &#123;</span><br><span class="line">            <span class="keyword">int</span> lo = <span class="number">0</span>, hi = n - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (newQ[mid][<span class="number">0</span>] &lt; in[<span class="number">0</span>]) &#123;</span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    hi = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> left = lo;</span><br><span class="line">            lo = <span class="number">0</span>;</span><br><span class="line">            hi = n - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (newQ[mid][<span class="number">0</span>] &lt;= in[<span class="number">1</span>]) &#123;</span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    hi = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> right = hi;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = left; i &lt;= right; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ans[newQ[i][<span class="number">1</span>]] == -<span class="number">1</span>) &#123;</span><br><span class="line">                    ans[newQ[i][<span class="number">1</span>]] = in[<span class="number">1</span>] - in[<span class="number">0</span>] + <span class="number">1</span>;</span><br><span class="line">                    nxt[i] = right;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    i = nxt[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>要干的事情好多，我快活不下去了。。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Fyseus</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://fyseus.github.io/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/">https://fyseus.github.io/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/lc/">lc</a></div><div class="post_share"><div class="social-share" data-image="/img/top_image.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/01/18/LeetCode%E7%AC%AC-276-%E5%9C%BA%E5%91%A8%E8%B5%9B/"><img class="next-cover" src="/img/top_image.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">LeetCode第 276 场周赛</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/01/14/LeetCode%E7%AC%AC-241-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 241 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-14</div><div class="title">LeetCode第 241 场周赛</div></div></a></div><div><a href="/2022/01/14/LeetCode%E7%AC%AC-242-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 242 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-14</div><div class="title">LeetCode第 242 场周赛</div></div></a></div><div><a href="/2022/01/15/LeetCode%E7%AC%AC-52-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 52 场双周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">LeetCode第 52 场双周赛</div></div></a></div><div><a href="/2022/01/15/LeetCode%E7%AC%AC-240-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 240 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">LeetCode第 240 场周赛</div></div></a></div><div><a href="/2022/01/18/LeetCode%E7%AC%AC-276-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 276 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-18</div><div class="title">LeetCode第 276 场周赛</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/01/15/4LU9qegZIn3lutp.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyseus</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fyseus"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fyseus" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:fyseus@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">大家好，博客初创，还有许多待完善之处，请多多关照</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%B0%E7%9B%AE%E6%A0%87%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB%EF%BC%88easy%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">到目标元素的最小距离（easy）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%86%E5%88%86%E4%B8%BA%E9%80%92%E5%87%8F%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%80%BC%EF%BC%88medium%EF%BC%89"><span class="toc-number">2.0.2.</span> <span class="toc-text">将字符串拆分为递减的连续值（medium）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%BB%E4%BD%8D%E4%BA%A4%E6%8D%A2%E7%9A%84%E6%9C%80%E5%B0%8F%E6%AC%A1%E6%95%B0%EF%BC%88medium%EF%BC%89"><span class="toc-number">2.0.3.</span> <span class="toc-text">邻位交换的最小次数（medium）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E6%AF%8F%E4%B8%AA%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4%EF%BC%88hard%EF%BC%89"><span class="toc-number">2.0.4.</span> <span class="toc-text">包含每个查询的最小区间（hard）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 239 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 239 场周赛"/></a><div class="content"><a class="title" href="/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 239 场周赛">LeetCode第 239 场周赛</a><time datetime="2022-01-18T16:48:54.000Z" title="Created 2022-01-19 00:48:54">2022-01-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/18/LeetCode%E7%AC%AC-276-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 276 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 276 场周赛"/></a><div class="content"><a class="title" href="/2022/01/18/LeetCode%E7%AC%AC-276-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 276 场周赛">LeetCode第 276 场周赛</a><time datetime="2022-01-18T13:51:52.000Z" title="Created 2022-01-18 21:51:52">2022-01-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/15/LeetCode%E7%AC%AC-240-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 240 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 240 场周赛"/></a><div class="content"><a class="title" href="/2022/01/15/LeetCode%E7%AC%AC-240-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 240 场周赛">LeetCode第 240 场周赛</a><time datetime="2022-01-15T07:00:46.000Z" title="Created 2022-01-15 15:00:46">2022-01-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/15/LeetCode%E7%AC%AC-52-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 52 场双周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 52 场双周赛"/></a><div class="content"><a class="title" href="/2022/01/15/LeetCode%E7%AC%AC-52-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 52 场双周赛">LeetCode第 52 场双周赛</a><time datetime="2022-01-15T05:14:10.000Z" title="Created 2022-01-15 13:14:10">2022-01-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/14/LeetCode%E7%AC%AC-241-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 241 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 241 场周赛"/></a><div class="content"><a class="title" href="/2022/01/14/LeetCode%E7%AC%AC-241-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 241 场周赛">LeetCode第 241 场周赛</a><time datetime="2022-01-14T12:22:15.000Z" title="Created 2022-01-14 20:22:15">2022-01-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Fyseus</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
