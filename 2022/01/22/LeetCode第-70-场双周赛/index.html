@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LeetCode第 70 场双周赛 | dreaming since long time ago</title><meta name="keywords" content="lc"><meta name="author" content="Fyseus"><meta name="copyright" content="Fyseus"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="悲伤。。   前言 手速场，手没了    题目打折购买糖果的最小开销（easy） 一家商店正在打折销售糖果。每购买 两个 糖果，商店会 免费 送一个糖果。 免费送的糖果唯一的限制是：它的价格需要小于等于购买的两个糖果价格的 较小值 。  比方说，总共有 4 个糖果，价格分别为 1 ，2 ，3 和 4 ，一位顾客买了价格为 2 和 3 的糖果，那么他可以免费获得价格为 1 的糖果，但不能获得价格为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode第 70 场双周赛">
+<meta property="og:url" content="https://fyseus.github.io/2022/01/22/LeetCode%E7%AC%AC-70-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/index.html">
+<meta property="og:site_name" content="dreaming since long time ago">
+<meta property="og:description" content="悲伤。。   前言 手速场，手没了    题目打折购买糖果的最小开销（easy） 一家商店正在打折销售糖果。每购买 两个 糖果，商店会 免费 送一个糖果。 免费送的糖果唯一的限制是：它的价格需要小于等于购买的两个糖果价格的 较小值 。  比方说，总共有 4 个糖果，价格分别为 1 ，2 ，3 和 4 ，一位顾客买了价格为 2 和 3 的糖果，那么他可以免费获得价格为 1 的糖果，但不能获得价格为">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fyseus.github.io/img/top_image.jpg">
+<meta property="article:published_time" content="2022-01-22T15:14:19.000Z">
+<meta property="article:modified_time" content="2022-01-22T15:39:58.120Z">
+<meta property="article:author" content="Fyseus">
+<meta property="article:tag" content="lc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fyseus.github.io/img/top_image.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fyseus.github.io/2022/01/22/LeetCode%E7%AC%AC-70-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LeetCode第 70 场双周赛',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-22 23:39:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/01/15/4LU9qegZIn3lutp.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top_image.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dreaming since long time ago</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LeetCode第 70 场双周赛</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-22T15:14:19.000Z" title="Created 2022-01-22 23:14:19">2022-01-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-22T15:39:58.120Z" title="Updated 2022-01-22 23:39:58">2022-01-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LeetCode第 70 场双周赛"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>悲伤。。</p>
+</blockquote>
+<hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>手速场，手没了</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/01/22/DGudJspFEng6oZj.jpg" alt="70_biweekly.jpg"></p>
+<hr>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h5 id="打折购买糖果的最小开销（easy）"><a href="#打折购买糖果的最小开销（easy）" class="headerlink" title="打折购买糖果的最小开销（easy）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/biweekly-contest-70/problems/minimum-cost-of-buying-candies-with-discount/">打折购买糖果的最小开销（easy）</a></strong></h5><blockquote>
+<p>一家商店正在打折销售糖果。每购买 <strong>两个</strong> 糖果，商店会 <strong>免费</strong> 送一个糖果。</p>
+<p>免费送的糖果唯一的限制是：它的价格需要小于等于购买的两个糖果价格的 <strong>较小值</strong> 。</p>
+<ul>
+<li>比方说，总共有 <code>4</code> 个糖果，价格分别为 <code>1</code> ，<code>2</code> ，<code>3</code> 和 <code>4</code> ，一位顾客买了价格为 <code>2</code> 和 <code>3</code> 的糖果，那么他可以免费获得价格为 <code>1</code> 的糖果，但不能获得价格为 <code>4</code> 的糖果。</li>
+</ul>
+<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>cost</code> ，其中 <code>cost[i]</code> 表示第 <code>i</code> 个糖果的价格，请你返回获得 <strong>所有</strong> 糖果的 <strong>最小</strong> 总开销。</p>
+</blockquote>
+<p>贪心，从最大的开始取，可以使得送的糖果价值最大。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumCost</span><span class="params">(<span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(cost);</span><br><span class="line">        <span class="keyword">int</span> n = cost.length;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            <span class="keyword">if</span> (cnt % <span class="number">3</span> != <span class="number">0</span>) &#123;</span><br><span class="line">                ans += cost[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="统计隐藏数组数目（medium）"><a href="#统计隐藏数组数目（medium）" class="headerlink" title="统计隐藏数组数目（medium）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/biweekly-contest-70/problems/count-the-hidden-sequences/">统计隐藏数组数目（medium）</a></strong></h5><blockquote>
+<p>给你一个下标从 <strong>0</strong> 开始且长度为 <code>n</code> 的整数数组 <code>differences</code> ，它表示一个长度为 <code>n + 1</code> 的 <strong>隐藏</strong> 数组 <strong>相邻</strong> 元素之间的 <strong>差值</strong> 。更正式的表述为：我们将隐藏数组记作 <code>hidden</code> ，那么 <code>differences[i] = hidden[i + 1] - hidden[i]</code> 。</p>
+<p>同时给你两个整数 <code>lower</code> 和 <code>upper</code> ，它们表示隐藏数组中所有数字的值都在 <strong>闭</strong> 区间 <code>[lower, upper]</code> 之间。</p>
+<ul>
+<li><p>比方说，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">differences = [1, -3, 4]，lower = 1，upper = 6</span><br></pre></td></tr></table></figure>
+
+<p> ，那么隐藏数组是一个长度为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<p> 且所有值都在 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1和6</span><br></pre></td></tr></table></figure>
+
+<p> （包含两者）之间的数组。</p>
+<ul>
+<li><code>[3, 4, 1, 5]</code> 和 <code>[4, 5, 2, 6]</code> 都是符合要求的隐藏数组。</li>
+<li><code>[5, 6, 3, 7]</code> 不符合要求，因为它包含大于 <code>6</code> 的元素。</li>
+<li><code>[1, 2, 3, 4]</code> 不符合要求，因为相邻元素的差值不符合给定数据。</li>
+</ul>
+</li>
+</ul>
+<p>请你返回 <strong>符合</strong> 要求的隐藏数组的数目。如果没有符合要求的隐藏数组，请返回 <code>0</code> 。</p>
+</blockquote>
+<p>重新建立数组，并得到最大和最小值的差值，与lower和upper比较，得到符合数目结果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numberOfArrays</span><span class="params">(<span class="keyword">int</span>[] differences, <span class="keyword">int</span> lower, <span class="keyword">int</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = differences.length;</span><br><span class="line">        <span class="keyword">long</span> lo = <span class="number">0</span>, hi = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span>[] nums = <span class="keyword">new</span> <span class="keyword">long</span>[n + <span class="number">1</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            nums[i] = nums[i - <span class="number">1</span>] + differences[i - <span class="number">1</span>];</span><br><span class="line">            lo = Math.min(lo, nums[i]);</span><br><span class="line">            hi = Math.max(hi, nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ((<span class="keyword">long</span>)upper - (<span class="keyword">long</span>)lower - (hi - lo) + <span class="number">1L</span>) &gt; <span class="number">0</span> ? (<span class="keyword">int</span>)((<span class="keyword">long</span>)upper - (<span class="keyword">long</span>)lower - (hi - lo) + <span class="number">1L</span>) : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="价格范围内最高排名的-K-样物品（medium）"><a href="#价格范围内最高排名的-K-样物品（medium）" class="headerlink" title="价格范围内最高排名的 K 样物品（medium）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/biweekly-contest-70/problems/k-highest-ranked-items-within-a-price-range/">价格范围内最高排名的 K 样物品（medium）</a></strong></h5><blockquote>
+<p>给你一个下标从 <strong>0</strong> 开始的二维整数数组 <code>grid</code> ，它的大小为 <code>m x n</code> ，表示一个商店中物品的分布图。数组中的整数含义为：</p>
+<ul>
+<li><code>0</code> 表示无法穿越的一堵墙。</li>
+<li><code>1</code> 表示可以自由通过的一个空格子。</li>
+<li>所有其他正整数表示该格子内的一样物品的价格。你可以自由经过这些格子。</li>
+</ul>
+<p>从一个格子走到上下左右相邻格子花费 <code>1</code> 步。</p>
+<p>同时给你一个整数数组 <code>pricing</code> 和 <code>start</code> ，其中 <code>pricing = [low, high]</code> 且 <code>start = [row, col]</code> ，表示你开始位置为 <code>(row, col)</code> ，同时你只对物品价格在 <strong>闭区间</strong> <code>[low, high]</code> 之内的物品感兴趣。同时给你一个整数 <code>k</code> 。</p>
+<p>你想知道给定范围 <strong>内</strong> 且 <strong>排名最高</strong> 的 <code>k</code> 件物品的 <strong>位置</strong> 。排名按照优先级从高到低的以下规则制定：</p>
+<ol>
+<li>距离：定义为从 <code>start</code> 到一件物品的最短路径需要的步数（<strong>较近</strong> 距离的排名更高）。</li>
+<li>价格：<strong>较低</strong> 价格的物品有更高优先级，但只考虑在给定范围之内的价格。</li>
+<li>行坐标：<strong>较小</strong> 行坐标的有更高优先级。</li>
+<li>列坐标：<strong>较小</strong> 列坐标的有更高优先级。</li>
+</ol>
+<p>请你返回给定价格内排名最高的 <code>k</code> 件物品的坐标，将它们按照排名排序后返回。如果给定价格内少于 <code>k</code> 件物品，那么请将它们的坐标 <strong>全部</strong> 返回。</p>
+</blockquote>
+<p>bfs和优先队列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 距离/价格/行/列</span></span><br><span class="line">    <span class="keyword">int</span>[][] dirs = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; highestRankedKItems(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span>[] pricing, <span class="keyword">int</span>[] start, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">// 距离 价格</span></span><br><span class="line">        PriorityQueue&lt;<span class="keyword">int</span>[]&gt; queue = <span class="keyword">new</span> PriorityQueue&lt;&gt;((t0, t1) -&gt; t0[<span class="number">2</span>] - t1[<span class="number">2</span>] == <span class="number">0</span> ? (grid[t0[<span class="number">0</span>]][t0[<span class="number">1</span>]] - grid[t1[<span class="number">0</span>]][t1[<span class="number">1</span>]] == <span class="number">0</span> ? (t0[<span class="number">0</span>] - t1[<span class="number">0</span>] == <span class="number">0</span> ? t0[<span class="number">1</span>] - t1[<span class="number">1</span>] : t0[<span class="number">0</span>] - t1[<span class="number">0</span>]) : grid[t0[<span class="number">0</span>]][t0[<span class="number">1</span>]] - grid[t1[<span class="number">0</span>]][t1[<span class="number">1</span>]]) : t0[<span class="number">2</span>] - t1[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">int</span> m = grid.length, n = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">boolean</span>[][] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n];</span><br><span class="line">        visited[start[<span class="number">0</span>]][start[<span class="number">1</span>]] = <span class="keyword">true</span>;</span><br><span class="line">        Deque&lt;<span class="keyword">int</span>[]&gt; deque = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        deque.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;start[<span class="number">0</span>], start[<span class="number">1</span>], <span class="number">0</span>&#125;);</span><br><span class="line">        <span class="keyword">while</span> (!deque.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] cur = deque.pollFirst();</span><br><span class="line">            <span class="keyword">int</span> price = grid[cur[<span class="number">0</span>]][cur[<span class="number">1</span>]];</span><br><span class="line">            <span class="keyword">if</span> (price &lt;= pricing[<span class="number">1</span>] &amp;&amp; price &gt;= pricing[<span class="number">0</span>] &amp;&amp; grid[cur[<span class="number">0</span>]][cur[<span class="number">1</span>]] != <span class="number">1</span>) &#123;</span><br><span class="line">                queue.offer(cur);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">int</span> nx = cur[<span class="number">0</span>] + dirs[i][<span class="number">0</span>], ny = cur[<span class="number">1</span>] + dirs[i][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">if</span> (vaild(grid, nx, ny) &amp;&amp; !visited[nx][ny]) &#123;</span><br><span class="line">                    visited[nx][ny] = <span class="keyword">true</span>;</span><br><span class="line">                    deque.offerLast(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nx, ny, cur[<span class="number">2</span>] + <span class="number">1</span>&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty() &amp;&amp; ans.size() &lt; k) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] cur = queue.poll();</span><br><span class="line">            List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            list.add(cur[<span class="number">0</span>]);</span><br><span class="line">            list.add(cur[<span class="number">1</span>]);</span><br><span class="line">            ans.add(list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">vaild</span><span class="params">(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = grid.length, n = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">return</span> x &gt;= <span class="number">0</span> &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; x &lt; m &amp;&amp; y &lt; n &amp;&amp; grid[x][y] != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="分隔长廊的方案数（hard）"><a href="#分隔长廊的方案数（hard）" class="headerlink" title="分隔长廊的方案数（hard）"></a><strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/biweekly-contest-70/problems/number-of-ways-to-divide-a-long-corridor/">分隔长廊的方案数（hard）</a></strong></h5><blockquote>
+<p>在一个图书馆的长廊里，有一些座位和装饰植物排成一列。给你一个下标从 <strong>0</strong> 开始，长度为 <code>n</code> 的字符串 <code>corridor</code> ，它包含字母 <code>&#39;S&#39;</code> 和 <code>&#39;P&#39;</code> ，其中每个 <code>&#39;S&#39;</code> 表示一个座位，每个 <code>&#39;P&#39;</code> 表示一株植物。</p>
+<p>在下标 <code>0</code> 的左边和下标 <code>n - 1</code> 的右边 <strong>已经</strong> 分别各放了一个屏风。你还需要额外放置一些屏风。每一个位置 <code>i - 1</code> 和 <code>i</code> 之间（<code>1 &lt;= i &lt;= n - 1</code>），至多能放一个屏风。</p>
+<p>请你将走廊用屏风划分为若干段，且每一段内都 <strong>恰好有两个座位</strong> ，而每一段内植物的数目没有要求。可能有多种划分方案，如果两个方案中有任何一个屏风的位置不同，那么它们被视为 <strong>不同</strong> 方案。</p>
+<p>请你返回划分走廊的方案数。由于答案可能很大，请你返回它对 <code>109 + 7</code> <strong>取余</strong> 的结果。如果没有任何方案，请返回 <code>0</code> 。</p>
+</blockquote>
+<p>一道脑筋急转弯，统计每两一组的座位之间的植物数，对于其之间的植物数k，有k+1种分隔方法，如果座位数为奇数或者为0，则没有分法，返回0.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">long</span> MOD = (<span class="keyword">long</span>)<span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numberOfWays</span><span class="params">(String corridor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = corridor.length();</span><br><span class="line">        <span class="keyword">char</span>[] arrs = corridor.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> cntS = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> arr : arrs) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr == <span class="string">&#x27;S&#x27;</span>) cntS++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cntS % <span class="number">2</span> == <span class="number">1</span> || cntS &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">1L</span>;</span><br><span class="line">        <span class="keyword">int</span> last = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> val = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> arr : arrs) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr == <span class="string">&#x27;S&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (cnt == <span class="number">2</span>) &#123;</span><br><span class="line">                    ans = (ans * (val + <span class="number">1L</span>)) % MOD;</span><br><span class="line">                    cnt = <span class="number">0</span>;</span><br><span class="line">                    val = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                cnt++;</span><br><span class="line">                cntS--;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr == <span class="string">&#x27;P&#x27;</span> &amp;&amp; cnt == <span class="number">2</span>) &#123;</span><br><span class="line">                val++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)(ans % MOD);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>反转了，WA了3发，可能得奖了，不过听说会re，名次可能会变。。┭┮﹏┭┮</p>
+<p>恰好第166名。。。</p>
+<p><img src="https://s2.loli.net/2022/01/22/EKk5SxIuhfCR2p6.jpg" alt="70_biweekly_obj.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Fyseus</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://fyseus.github.io/2022/01/22/LeetCode%E7%AC%AC-70-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/">https://fyseus.github.io/2022/01/22/LeetCode%E7%AC%AC-70-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/lc/">lc</a></div><div class="post_share"><div class="social-share" data-image="/img/top_image.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/01/22/LeetCode%E7%AC%AC-235-%E5%9C%BA%E5%91%A8%E8%B5%9B/"><img class="next-cover" src="/img/top_image.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">LeetCode第 235 场周赛</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/01/14/LeetCode%E7%AC%AC-241-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 241 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-14</div><div class="title">LeetCode第 241 场周赛</div></div></a></div><div><a href="/2022/01/14/LeetCode%E7%AC%AC-242-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 242 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-14</div><div class="title">LeetCode第 242 场周赛</div></div></a></div><div><a href="/2022/01/15/LeetCode%E7%AC%AC-52-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="第 52 场双周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">第 52 场双周赛</div></div></a></div><div><a href="/2022/01/15/LeetCode%E7%AC%AC-240-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 240 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">LeetCode第 240 场周赛</div></div></a></div><div><a href="/2022/01/18/LeetCode%E7%AC%AC-276-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 276 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-18</div><div class="title">LeetCode第 276 场周赛</div></div></a></div><div><a href="/2022/01/19/LeetCode%E7%AC%AC-239-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 239 场周赛"><img class="cover" src="/img/top_image.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-19</div><div class="title">LeetCode第 239 场周赛</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/01/15/4LU9qegZIn3lutp.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyseus</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fyseus"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fyseus" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:fyseus@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">大家好，博客初创，还有许多待完善之处，请多多关照</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%93%E6%8A%98%E8%B4%AD%E4%B9%B0%E7%B3%96%E6%9E%9C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%BC%80%E9%94%80%EF%BC%88easy%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">打折购买糖果的最小开销（easy）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E9%9A%90%E8%97%8F%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE%EF%BC%88medium%EF%BC%89"><span class="toc-number">2.0.2.</span> <span class="toc-text">统计隐藏数组数目（medium）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%B7%E6%A0%BC%E8%8C%83%E5%9B%B4%E5%86%85%E6%9C%80%E9%AB%98%E6%8E%92%E5%90%8D%E7%9A%84-K-%E6%A0%B7%E7%89%A9%E5%93%81%EF%BC%88medium%EF%BC%89"><span class="toc-number">2.0.3.</span> <span class="toc-text">价格范围内最高排名的 K 样物品（medium）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E9%95%BF%E5%BB%8A%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0%EF%BC%88hard%EF%BC%89"><span class="toc-number">2.0.4.</span> <span class="toc-text">分隔长廊的方案数（hard）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/01/22/LeetCode%E7%AC%AC-70-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 70 场双周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 70 场双周赛"/></a><div class="content"><a class="title" href="/2022/01/22/LeetCode%E7%AC%AC-70-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 70 场双周赛">LeetCode第 70 场双周赛</a><time datetime="2022-01-22T15:14:19.000Z" title="Created 2022-01-22 23:14:19">2022-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/22/LeetCode%E7%AC%AC-235-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 235 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 235 场周赛"/></a><div class="content"><a class="title" href="/2022/01/22/LeetCode%E7%AC%AC-235-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 235 场周赛">LeetCode第 235 场周赛</a><time datetime="2022-01-22T05:52:29.000Z" title="Created 2022-01-22 13:52:29">2022-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/22/LeetCode%E7%AC%AC-236-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 236 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 236 场周赛"/></a><div class="content"><a class="title" href="/2022/01/22/LeetCode%E7%AC%AC-236-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 236 场周赛">LeetCode第 236 场周赛</a><time datetime="2022-01-21T17:52:28.000Z" title="Created 2022-01-22 01:52:28">2022-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/21/LeetCode%E7%AC%AC-50-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 50 场双周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 50 场双周赛"/></a><div class="content"><a class="title" href="/2022/01/21/LeetCode%E7%AC%AC-50-%E5%9C%BA%E5%8F%8C%E5%91%A8%E8%B5%9B/" title="LeetCode第 50 场双周赛">LeetCode第 50 场双周赛</a><time datetime="2022-01-21T08:36:34.000Z" title="Created 2022-01-21 16:36:34">2022-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/21/LeetCode%E7%AC%AC-237-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 237 场周赛"><img src="/img/top_image.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode第 237 场周赛"/></a><div class="content"><a class="title" href="/2022/01/21/LeetCode%E7%AC%AC-237-%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="LeetCode第 237 场周赛">LeetCode第 237 场周赛</a><time datetime="2022-01-21T04:49:33.000Z" title="Created 2022-01-21 12:49:33">2022-01-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Fyseus</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
